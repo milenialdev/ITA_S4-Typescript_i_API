@@ -1,0 +1,248 @@
+/* Reset y variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colores */
+  --color-primary: #00D9C0;
+  --color-text-dark: #333333;
+  --color-text-light: #666666;
+  --color-white: #ffffff;
+  --color-bg-overlay: rgba(255, 255, 255, 0.85);
+  
+  /* Espaciados */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Sombras */
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --shadow-button: 0 4px 15px rgba(0, 217, 192, 0.3);
+  
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+/* Estilos base (móvil primero) */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  min-height: 100vh;
+  background: url('https://images.unsplash.com/photo-1758523981262-6b4fe624875f?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Overlay para mejorar legibilidad */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg-overlay);
+  z-index: 0;
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm);
+}
+
+/* Información meteorológica */
+.weather {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  font-size: 0.8rem;
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+/* Contenedor principal */
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* Título principal */
+.main-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  text-align: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Tarjeta del chiste */
+.joke-card {
+  background: var(--color-white);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  text-align: center;
+}
+
+#joke-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-text-dark);
+}
+
+/* Botones de valoración */
+.joke-card__rating {
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+}
+
+.rating-btn {
+  background: transparent;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rating-btn:hover {
+  transform: scale(1.1);
+  border-color: var(--color-primary);
+}
+
+.rating-btn:active {
+  transform: scale(0.95);
+}
+
+.rating-btn.selected {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+/* Botón siguiente chiste */
+#next-joke-btn {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  width: 100%;
+  max-width: 280px;
+}
+
+#next-joke-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 217, 192, 0.4);
+}
+
+#next-joke-btn:active {
+  transform: translateY(0);
+}
+
+/* Tablet */
+@media (min-width: 481px) {
+  #app {
+    padding: var(--spacing-md);
+  }
+
+  .weather {
+    font-size: 0.9rem;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+  }
+
+  main {
+    max-width: 600px;
+    gap: var(--spacing-lg);
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .joke-card {
+    padding: var(--spacing-lg);
+    min-height: 180px;
+    gap: var(--spacing-md);
+  }
+
+  #joke-text {
+    font-size: 1rem;
+  }
+
+  .rating-btn {
+    font-size: 1.4rem;
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+
+  .joke-card__rating {
+    gap: var(--spacing-sm);
+  }
+
+  #next-joke-btn {
+    padding: 0.95rem 2.25rem;
+    font-size: 0.98rem;
+    width: auto;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .joke-card {
+    padding: var(--spacing-xl);
+    min-height: 200px;
+  }
+
+  #joke-text {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+
+  .rating-btn {
+    font-size: 1.5rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  #next-joke-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+}

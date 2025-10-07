@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Acudits per riure</title>
 </head>
 <body>
-    <button id="next-joke">Següent acudit</button>
-    <div id="joke-container"></div>
+    <div id="app">
+        <header class="weather">
+            <p id="weather-info">Carregant informació meteorològica...</p>
+        </header>
+        <main>
+            <h1 class="main-title">Preparat per riure? 🤣</h1>
+            <article class="joke-card">
+                <p id="joke-text">Carregant acudit...</p>
+                <div class="joke-card__rating" id="rating-buttons">
+                    <button class="rating-btn" data-score="1">😐</button>
+                    <button class="rating-btn" data-score="2">😊</button>
+                    <button class="rating-btn" data-score="3">😂</button>
+                </div>
+            </article>
+            <button id="next-joke-btn">Següent acudit</button>
+        </main>
+    </div>
 
-    <script type="module" src="./build/index.js"></script>
+    <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
