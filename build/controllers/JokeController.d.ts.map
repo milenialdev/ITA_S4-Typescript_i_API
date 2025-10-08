@@ -1,0 +1,1 @@
+{"version":3,"file":"JokeController.d.ts","sourceRoot":"","sources":["../../controllers/JokeController.ts"],"names":[],"mappings":"AAKA,iBAAe,WAAW,IAAI,OAAO,CAAC,MAAM,CAAC,CAsB5C;AAGD,iBAAS,iBAAiB,CAAC,KAAK,EAAE,CAAC,GAAG,CAAC,GAAG,CAAC,GAAG,IAAI,CAEjD;AAED,iBAAe,cAAc,IAAI,OAAO,CAAC,MAAM,CAAC,CAW/C;AAED,OAAO,EAAE,WAAW,EAAE,iBAAiB,EAAE,cAAc,EAAE,CAAC"}
