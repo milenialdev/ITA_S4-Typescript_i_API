@@ -52,7 +52,7 @@ ratingBtns.forEach(btn => {
     });
 });
 
-// ===== INICIALIZACIÓN =====
+//App Initialization
 
 async function init() {
     try {
